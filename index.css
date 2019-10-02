@@ -1,0 +1,31 @@
+body { background-color: yellow;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: blue
+}
+/*intro*/
+.intro {
+    width: 100%;
+    height: 100vh;
+}
+/*containar*/
+.containar {
+    width: 100%;
+    max-width: 0 auto;
+
+}
+/*header*/
+.header {
+  width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header_logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: dark;
+}

@@ -2,6 +2,7 @@ body {
     background-color: ivory;
     margin: 20px;
     line-height: 1.6;
+    /*header*/
 }
 
 .header_logo {
@@ -11,26 +12,38 @@ body {
 }
 
 .header_search {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0px 100px 0;
     width: 100%;
-    max-width: 1015px;
+    height: 10;
+    padding-left: 10px;
+    padding-right: 0px;
 }
 
-
 .header_search_text {
-    background-color: white;
-    border: 3px solid black;
+    border: none;
     border-radius: 10px;
     box-sizing: border-box;
 }
+
 .header_search_btn-submit {
+    width: 96px;
+    padding-left: 5px;
+}
+
+.header_search_btn-submit > button {
+    background-color: darkorange;
+    border-radius: 10px;
+    border: 0 none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 36px;
+    padding: 6px 12px;
+    text-align: center;
+    white-space: nowrap;
     width: 94px;
-    padding-left: 15px;}
-
-.header_search_btn-submit>button {
-
+    box-sizing: border-box;
 }
 
 .header_search input {
@@ -42,20 +55,15 @@ body {
     outline: 0;
 }
 
-/*intro*/
 .intro {
     width: 100%;
     height: 100vh;
 }
 
-/*containar*/
 .containar {
     width: 100%;
     max-width: 0 auto;
-
 }
-
-/*header*/
 
 .header {
     background-color: skyblue;
@@ -73,22 +81,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav {
-    font-size: 22px;
+    font-size: 30px;
     text-transform: uppercase;
 }
 
 .nav_link {
     display: inline-block;
     vertical-align: top;
-    margin: 0 10px;
+    margin: 10px;
     position: relative;
     color: black;
     text-decoration: none;
     transition: color 0.1s liner;
+    left: 200px;
 }
 
 .nav_link:after {
@@ -112,4 +120,173 @@ body {
 
 .nav_link:hover:after {
     opacity: 1;
+}
+
+//*anime*//
+#slider {
+    /*положення слайдера*/
+    position: relative;
+    text-align: center;
+    top: 100px;
+}
+
+#slider {
+    /*центровка слайдера*/
+    margin: 0 auto;
+}
+
+#slides article {
+    */всі зображення зправа один від одного*/ width: 200px;
+    float: left;
+}
+
+#slides .image {
+    /*встоновлює загальний розмір блока із зображенням*/
+    width: 500px;
+    height:  500px;
+    line-height: 0;
+
+}
+
+#overflow {
+    /*приховує все що за межами цього блоку*/
+ /*   width: 100%;*/
+    height: 500px;
+    overflow: hidden;
+
+}
+
+article img {
+    /*розмір зображення слайда*/
+    width: 500px;
+}
+
+#desktop:checked ~ #slider {
+    /*розмір всього слайду*/
+    max-width: 500px;
+    /*максимальна довжина*/
+}
+
+/*настройка і переключення для лівої стрілки
+   якщо свіч1-5 активний то іде звернення до лейбла з блока ід контролс*/
+#switch1:checked ~ #controls label:nth-child(6),
+#switch2:checked ~ #controls label:nth-child(1),
+#switch3:checked ~ #controls label:nth-child(2),
+#switch4:checked ~ #controls label:nth-child(3),
+#switch5:checked ~ #controls label:nth-child(4),
+#switch6:checked ~ #controls label:nth-child(5) {
+    background: url(#) no-repeat;
+    /*заливка фона картинкою без*/
+    float: left;
+    margin: 0 0 0 -84px;
+    /*зсув в ліво*/
+    display: block;
+    height: 68px;
+    width: 68px;
+
+}
+
+/*настройка переключення і положення для правої стрілки*/
+
+#switch1:checked ~ #controls label:nth-child(2),
+#switch2:checked ~ #controls label:nth-child(3),
+#switch3:checked ~ #controls label:nth-child(4),
+#switch4:checked ~ #controls label:nth-child(5),
+#switch5:checked ~ #controls label:nth-child(6),
+#switch6:checked ~ #controls label:nth-child(1) {
+    background: url(#) no-repeat;
+    /*заливка фона картинкою без*/
+    float: right;
+    margin: 0 -84px 0 0;
+    /*зсув в право*/
+    display: block;
+    height: 68px;
+    width: 68px;
+
+}
+
+label,
+a {
+    /*при наведенні на стрілку чи переключатель, куосор зміниться*/
+    cursor: pointer;
+
+}
+
+.all input {
+    /*приховує стандартні внпути на сторінці (чекбокси) на сторінці*/
+    display: none;
+}
+
+/*позиція ображення при активації переключателя*/
+#switch1:checked ~ #slides .image {
+    margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image {
+    margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image {
+    margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image {
+    margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image {
+    margin-left: -400%;
+}
+
+#switch6:checked ~ #slides .image {
+    margin-left: -500%;
+}
+
+#controls {
+    /*положення блока всіх управляючих елементів*/
+    margin: -25% 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+#active label {
+    /*стиль окремого переключателя*/
+    border-radius: 10px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #bbb;
+}
+
+#active {
+    /*розташування блока з переключателями*/
+    margin: 23% 0 0;
+    text-align: center;
+}
+
+#active label:hover {
+    background: #76c8ff;
+    border-color: #777 !important;
+}
+
+#switch1:checked ~ #active lebel:nth-child(1),
+#switch2:checked ~ #active lebel:nth-child(2),
+#switch3:checked ~ #active lebel:nth-child(3),
+#switch4:checked ~ #active lebel:nth-child(4),
+#switch5:checked ~ #active lebel:nth-child(5),
+#switch6:checked ~ #active lebel:nth-child(6) {
+    background: #18a3dd;
+    border-color: #18a3dd !important;
+}
+
+#slides .image {
+    transition: all 800ms cubic-bazier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover {
+    opacity: 0.6;
+}
+
+#controls label {
+    transition: opaciti 0.2s easse-out;
 }
